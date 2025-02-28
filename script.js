@@ -86,9 +86,10 @@ const people = [
 		hobbies: ["design", "drawing", "css"]
 	}
 ];
+
 let combinedAge = 0;
 
-// function for å legge til byene i random rekkefølge
+// Funksjon for å legge til byene i random rekkefølge
 
 function getRandomCities(cities) {
     return cities[Math.floor(Math.random() * cities.length)];
@@ -199,7 +200,20 @@ skal returnere:
 
 const randomText = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"]
 
-function blockOfText ()
+/* I denne funksjonen så trimmer vi stringen i arrayet for mellomrom
+	 også får det litt ryddig med .toLowerCase()
+	 tilslutt returnerer den nye arrayet til å bli en string */
+function thisText () {
+	let cleanedText = [];
+
+	for (let text of randomText) {
+		cleanedText.push(text.trim().toLowerCase());
+	}
+	return cleanedText.join(" ");
+}
+
+// Consol logger funksjonen for å få resultatet.
+console.log(thisText())
 
 /******************************************************************************
 4.
@@ -226,9 +240,25 @@ skal returnere "whao is ohe ptino tf ohis?"
 
 ******************************************************************************/
 
+// Søkte litt, men fant ut av hvordan man skulle gjøre det.
+// Skrev min egen kode da jeg bare så på eksempler for å lære det.
+
 function doubleSwap(string, charA, charB) {
-	// Skriv koden for oppgave 4 her
+	return string.split("").reduce((newString, char) =>
+	newString + (char === charA ? charB : char === charB ? charA : char),
+"");
 }
+
+// Jeg kan da consol logge de eksemplene etterpå
+
+// Eksempel 1
+console.log(doubleSwap("this is a string", "i", "s"));
+
+// Eksempel 2
+console.log(doubleSwap("m#ybe #nother #ppro#ch is necess#ry", "#", "a"));
+
+// Eksempel 3
+console.log(doubleSwap("what is the point of this?", "o", "t"));
 
 /******************************************************************************
 5.
